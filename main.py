@@ -97,16 +97,42 @@ def fill(board, r, c):
 
 
 def check_win(board):
-    N = len(board)
-    n = 3
-    for i in range(n):
-        for x, y, z in zip(board[i][0], board[i][(n-2):], board[i][(n-1):]):
+    # N = len(board)
+    temp = ""
+    new_board = [[x for x in y] for y in board]
+    # print("baord: ",board)
+    for i in range(3):
+        x = new_board[i][0]
+        y = new_board[i][1]
+        z = new_board[i][2]
+        if (x is y is z == "X"):
+            print("X win")
+            temp = "X"
+            break
+        elif (x is y is z == "O"):
+            print("O win")
+            temp = "O"
+            break
+        else:
+            temp = "-"
+    if (temp == "O" or temp == "X"):
+        return temp
+    for i in range(3):
+            x = new_board[i][0]
+            y = new_board[i][1]
+            z = new_board[i][2]
             if (x is y is z == "X"):
-                return "X"
+                print("X win")
+                temp = "X"
+                break
             elif (x is y is z == "O"):
-                return "O"
+                print("O win")
+                temp = "O"
+                break
             else:
-                return "-"
+                temp = "-"
+    return "-"
+
 
 
 # ------------------------------------------
