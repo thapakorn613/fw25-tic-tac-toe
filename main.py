@@ -118,19 +118,21 @@ def check_win(board):
     if (temp == "O" or temp == "X"):
         return temp
     for i in range(3):
-            x = new_board[i][0]
-            y = new_board[i][1]
-            z = new_board[i][2]
-            if (x is y is z == "X"):
-                print("X win")
-                temp = "X"
-                break
-            elif (x is y is z == "O"):
-                print("O win")
-                temp = "O"
-                break
-            else:
-                temp = "-"
+        x = new_board[0][i]
+        y = new_board[1][i]
+        z = new_board[2][i]
+        if (x is y is z == "X"):
+            print("X win")
+            temp = "X"
+            break
+        elif (x is y is z == "O"):
+            print("O win")
+            temp = "O"
+            break
+        else:
+            temp = "-"
+    if (temp == "O" or temp == "X"):
+        return temp
     return "-"
 
 
