@@ -4,14 +4,12 @@
 # Declare that you do this by yourself
 
 import random
-
-
+                     
 def main():
     N = int(input('Board size = '))
     board = [["-"]*N for j in range(N)]
     end = False
     print_board(board)
-
     while(not end):
         print("========== Player Turn ==========")
         player_input(board)
@@ -34,7 +32,6 @@ def main():
                 print("(;-;)    YOU LOSE!!!    (;-;)")
             break
     print("Game has ended, thanks for playing :D")
-
 
 def com_fill(board):
     N = len(board)
@@ -60,16 +57,15 @@ def com_fill(board):
 
 def print_board(board):
     N = len(board)
-    print(" "*3, end="")
+    print(" "*3 , end = "")
     for i in range(N):
-        print((str(i) + " "*(3))[:3], end="")
+        print((str(i)+ " "*(3))[:3], end = "")
     print()
     for row in range(N):
-        print((str(row) + " "*(3))[:3], end="")
+        print((str(row)+ " "*(3))[:3], end = "")
         for col in range(N):
-            print(board[row][col], end="    ")
+            print(board[row][col], end = "    ")
         print()
-
 
 def player_input(board):
     f = False
@@ -84,7 +80,7 @@ def player_input(board):
         except:
             print("!!! Invalid Input !!!")
             print("---try again---")
-# ------------------------------------------
+#------------------------------------------
 
 def findInList(list, platform):
     for i in range(len(list)):
@@ -181,5 +177,8 @@ def check_win(board):
     return "-"
 
 
-# ------------------------------------------
+
+
+#------------------------------------------
+
 main()
